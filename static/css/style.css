@@ -1,0 +1,152 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.button,
+button.copy-button {
+    background-color: #4CAF50;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover,
+button.copy-button:hover,
+.button:active,
+button.copy-button:active {
+    background-color: #3e8e41;
+}
+
+.button.copied,
+button.copy-button.copied {
+    background-color: #9CCC65;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.messages li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.document {
+    position: relative;
+}
+
+.document pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: monospace;
+    font-size: 16px;
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin: 20px 0 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .button,
+    button.copy-button {
+        font-size: 14px;
+    }
+
+    .document pre {
+        font-size: 16px;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+button.copy-button {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+}
+
+.custom-file-upload:hover {
+    background-color: #3e8e41;
+}
+
+.close-button {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    background-color: #f44336;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #f44336;
+}
+
+.close-button:active {
+    background-color: #d32f2f;
+}

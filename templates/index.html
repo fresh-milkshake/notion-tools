@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Notion instruments</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Document Cleaner</h1>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        
+        <form action="/" method="post" enctype="multipart/form-data">
+            <label for="file-upload" class="custom-file-upload">Select File</label>
+            <input id="file-upload" type="file" name="file" accept=".md" required>
+            <button type="submit" class="button">Clean Document</button>
+        </form>
+
+        {% if document %}
+        <h2 class="subtitle">Cleaned Document</h2>
+        <div class="document">
+            <pre>{{ document }}</pre>
+            <button class="copy-button" onclick="copyText()">Copy to Clipboard</button>\
+            <button class="close-button" onclick="closeDocument()">Close</button>
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
