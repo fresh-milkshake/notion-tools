@@ -15,11 +15,6 @@ def is_allowed_file(filename):
 
 
 def clean_text(text: str):
-    test_file = os.path.join(app.root_path, 'test.txt')
-    with open(test_file, 'w', encoding='utf-8') as f:
-        f.write(text)
-
-    # clear text
     cleaned_text = re.sub(r'[\n\r]+', '\n', text)
     return cleaned_text
 
